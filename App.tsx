@@ -1,54 +1,32 @@
 import {
   Text,
   View,
-  Image,
-  ScrollView,
   TextInput,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import profile1 from './assets/profile1.jpg';
-import Title from './src/components/Title';
-import Input from './src/components/index';
+
 
 const App = () => {
   return (
     <View style={style.container}>
-      <Title text="Ridings Collection"/>
-      <ScrollView contentContainerStyle={style.scrollView}>
-        <View style={style.boxContainer}>
-          <View style={[style.box, { backgroundColor: 'red', marginRight: 5 }]} />
-          <View style={[style.box, { backgroundColor: 'white', marginRight: 5 }]} />
-          <View style={[style.box, { backgroundColor: 'black' }]} />
-        </View>
-        <Text style={style.title2}>Photos</Text>
-        <View style={style.imageContainer}>
-          <Image
-            source={require('./assets/profile1.jpg')}
-            style={style.image}
-          />
-          <Image
-            source={require('./assets/riding1.jpg')}
-            style={style.image}
-          />
-          <Image
-            source={require('./assets/riding2.jpg')}
-            style={style.image}
-          />
-        </View>
-        <Text style={style.title3}>Supported By :</Text>
-        <View style={style.image2Container}>
-          <Image
-            source={require('./assets/KYT.png')}
-            style={style.image2}
-          />
-          <Image
-            source={require('./assets/honda_logo.png')}
-            style={style.image3}
-          />
-        </View>
-        <Input />
-      </ScrollView>
+      <Text style={style.title}>Welcome</Text>
+      <Text style={style.title2}>Username</Text>
+      <TextInput
+        placeholder="Masukan username anda"
+        placeholderTextColor="black"
+        style={style.inputUsername}
+      />
+      <Text style={style.title3}>Password</Text>
+      <TextInput
+        placeholder="Masukan password anda"
+        placeholderTextColor="black"
+        style={style.inputPassword}
+      />
+      <TouchableOpacity style={style.button}>
+        <Text style={style.buttonText}>Sign In</Text>
+      </TouchableOpacity>
     </View>
   )
 };
@@ -60,74 +38,58 @@ const style = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontSize: 30,
-    fontWeight: 'bold',
     color: 'black',
-    textAlign: 'center',
+    fontSize: 40,
+    fontWeight: 'bold',
     marginTop: 10,
-    marginBottom: 10,
+    marginLeft: 15,
   },
   title2: {
-    fontSize: 16,
-    fontWeight: 'bold',
     color: 'black',
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  title3: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black',
-    textAlign: 'center',
-    marginTop: 20,
-    marginBottom: 20,
+    fontSize: 20,
+    marginLeft: 15,
+    marginTop: 35,
   },
   inputUsername: {
     borderColor: 'black',
     borderWidth: 1,
-    marginVertical: 10,
     borderRadius: 10,
-    padding: 10,
-    fontSize: 16,
-    textAlign: 'center',
+    marginTop: 5,
+    textColor: 'black',
+    alignSelf: 'center',
+    width: '92%',
+    padding: 15,
   },
-  boxContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+  title3: {
+    color: 'black',
+    fontSize: 20,
+    marginLeft: 15,
+    marginTop: 35,
   },
-  box: {
-    borderWidth: 2,
+  inputPassword: {
     borderColor: 'black',
-    width: 70,
-    height: 70,
-    borderRadius: 100,
+    borderWidth: 1,
+    borderRadius: 10,
+    marginTop: 5,
+    textColor: 'black',
+    alignSelf: 'center',
+    width: '92%',
+    padding: 15,
   },
-  imageContainer: {
-    justifyContent: 'center',
+  button: {
+    backgroundColor: 'orange',
+    borderRadius: 10,
+    marginTop: 55,
+    alignSelf: 'center',
+    width: '92%',
+    padding: 15,
     alignItems: 'center',
   },
-  image: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
-    marginVertical: 10,
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
-  image2Container: {
-    flexDirection: 'row',
-  },
-  image2: {
-    width: 125,
-    height: 110,
-    marginLeft: 55,
-  },
-  image3: {
-    width: 90,
-    height: 90,
-    marginLeft: 30,
-    resizeMode: 'contain',
-  }
 });
 
 export default App;
